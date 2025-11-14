@@ -6,14 +6,14 @@ function calculateMetro() {
     return;
   }
 
-  let result = 1.38 * x ;
-  let formatted = result.toFixed(2);
+  // Correct formula: 1.38 * user input
+  let result = x * 1.38;
 
-  document.getElementById("result").innerText = "Result: " + formatted;
+  // If you want exact value (no rounding):
+  document.getElementById("result").innerText = "Result: " + result;
 
   // ✅ Save to localStorage for history
   let history = JSON.parse(localStorage.getItem("calcHistory")) || [];
-  history.push(`Metro Sheet → X:${x} → ${formatted}`);
+  history.push(`Metro Sheet → X:${x} → ${result}`);
   localStorage.setItem("calcHistory", JSON.stringify(history));
 }
-
