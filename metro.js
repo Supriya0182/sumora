@@ -6,7 +6,7 @@ function calculateMetro() {
     return;
   }
 
-  let result = x * 14;
+  let result = 1.38 * x ;
   let formatted = result.toFixed(2);
 
   document.getElementById("result").innerText = "Result: " + formatted;
@@ -16,3 +16,4 @@ function calculateMetro() {
   history.push(`Metro Sheet → X:${x} → ${formatted}`);
   localStorage.setItem("calcHistory", JSON.stringify(history));
 }
+
